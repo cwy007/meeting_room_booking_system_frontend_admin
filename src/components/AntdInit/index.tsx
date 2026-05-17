@@ -8,6 +8,8 @@ import globalMessage from "@/common/utils/globalMessage";
 function AntdInit() {
   const { message } = App.useApp();
 
+  // throw new Error("测试 main.tsx ErrorBoundary"); // 临时加这行
+
   useEffect(() => {
     globalMessage.instance = message;
   }, [message]);

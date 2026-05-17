@@ -1,17 +1,18 @@
 import type { RouteObject } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage";
+import ErrorNotFound from "./components/ErrorNotFound";
 import Login from "./pages/Login";
 import UpdatePassword from "./pages/UpdatePassword";
 import Layout from "./components/Layout";
 import Profile from "./pages/Profile";
 import UserList from "./pages/UserList";
+import { RouteErrorFallback } from "./components/ErrorBoundary";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <Layout />,
-    errorElement: <ErrorPage />,
+    errorElement: <RouteErrorFallback />, // 添加错误边界
     children: [
       {
         index: true,
@@ -27,7 +28,7 @@ const routes: RouteObject[] = [
       },
       {
         path: "*",
-        element: <ErrorPage />,
+        element: <ErrorNotFound />,
       },
     ],
   },
