@@ -25,6 +25,10 @@ const routes: RouteObject[] = [
         path: "/user-list",
         element: <UserList />,
       },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
     ],
   },
   {
