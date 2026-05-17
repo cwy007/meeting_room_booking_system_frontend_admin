@@ -46,6 +46,7 @@ function UpdatePassword() {
       if (res.code === 200) {
         message.success("密码修改成功");
         setTimeout(() => {
+          localStorage.clear();
           window.location.href = "/login";
         }, 1500);
       } else {

@@ -7,7 +7,7 @@ export function getUserInfo() {
 }
 
 export function updateUser(data: UpdateUserDto) {
-  return request.post<never, ApiResponse<string>>("/user/update", data);
+  return request.post<never, ApiResponse<string>>("/user/admin/update", data);
 }
 
 export function getUpdateCaptcha() {
