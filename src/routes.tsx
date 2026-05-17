@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Profile from "./pages/Profile";
 import UserList from "./pages/UserList";
 import { RouteErrorFallback } from "./components/ErrorBoundary";
+import MeetingRoom from "./pages/MeetingRoom";
 
 const routes: RouteObject[] = [
   {
@@ -16,7 +17,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to="/user-list" replace />,
+        element: <Navigate to="/meeting-room" replace />,
       },
       {
         path: "/profile",
@@ -25,6 +26,10 @@ const routes: RouteObject[] = [
       {
         path: "/user-list",
         element: <UserList />,
+      },
+      {
+        path: "/meeting-room",
+        element: <MeetingRoom />,
       },
       {
         path: "*",
