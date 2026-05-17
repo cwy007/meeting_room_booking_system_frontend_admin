@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
-import { Form, Input, Button, Table, Tag, Space, Image, Avatar } from "antd";
+import { Form, Input, Button, Table, Tag, Space, Image, Avatar, App } from "antd";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import type { TableProps } from "antd";
 import type { User, UserListParams } from "./types";
-import { getUserList } from "./services";
+import { getUserList, freezeUser, unfreezeUser } from "./services";
 
 function UserList() {
+  const { message, modal } = App.useApp();
   const [form] = Form.useForm<UserListParams>();
   const [data, setData] = useState<User[]>([]);
   const [total, setTotal] = useState(0);
@@ -49,6 +50,22 @@ function UserList() {
     fetchData(newPage, newPageSize, form.getFieldsValue());
   };
 
+  const handleToggleFreeze = (record: User) => {
+    const action = record.isFrozen ? "解冻" : "冻结";
+    modal.confirm({
+      title: `确认${action}`,
+      content: `确定要${action}用户「${record.username}」吗？`,
+      okText: "确认",
+      cancelText: "取消",
+      onOk: async () => {
+        const fn = record.isFrozen ? unfreezeUser : freezeUser;
+        await fn(record.id);
+        message.success(`${action}成功`);
+        fetchData(page, pageSize, form.getFieldsValue());
+      },
+    });
+  };
+
   const columns: TableProps<User>["columns"] = [
     {
       title: "头像",
@@ -80,6 +97,15 @@ function UserList() {
       title: "注册时间",
       dataIndex: "createTime",
       render: (val: string) => new Date(val).toLocaleDateString("zh-CN"),
+    },
+    {
+      title: "操作",
+      key: "action",
+      render: (_: unknown, record: User) => (
+        <Button size="small" danger={!record.isFrozen} onClick={() => handleToggleFreeze(record)}>
+          {record.isFrozen ? "解冻" : "冻结"}
+        </Button>
+      ),
     },
   ];
 
