@@ -47,7 +47,7 @@ function AppLayout() {
           style={{ fontSize: 18, fontWeight: 600, cursor: "pointer" }}
           onClick={() => navigate("/")}
         >
-          会议室预订系统
+          会议室预订系统-后台管理
         </span>
 
         <Dropdown menu={{ items: userMenuItems }} placement="bottomRight">

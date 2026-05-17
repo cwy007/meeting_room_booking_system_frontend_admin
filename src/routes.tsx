@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import UpdatePassword from "./pages/UpdatePassword";
 import Layout from "./components/Layout";
 import Profile from "./pages/Profile";
+import UserList from "./pages/UserList";
 
 const routes: RouteObject[] = [
   {
@@ -14,6 +15,10 @@ const routes: RouteObject[] = [
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/user-list",
+        element: <UserList />,
       },
     ],
   },

@@ -31,7 +31,7 @@ function Login() {
 
   return (
     <div id="login-container">
-      <h1 className="title">会议室预订系统登录</h1>
+      <h1 className="title">会议室预订系统-后台管理</h1>
 
       <Form form={form} layout="vertical" onFinish={onFinish}>
         <Form.Item
@@ -48,7 +48,6 @@ function Login() {
 
         <Form.Item>
           <div className="links">
-            <a href="/signup">创建账号</a>
             <a href="/update-password">忘记密码</a>
           </div>
         </Form.Item>
@@ -59,7 +58,6 @@ function Login() {
           </Button>
         </Form.Item>
       </Form>
-      {/* Add your login form here */}
     </div>
   );
 }

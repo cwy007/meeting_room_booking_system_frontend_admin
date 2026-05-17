@@ -41,7 +41,7 @@ async function tryRefreshToken(): Promise<string | null> {
 
   try {
     const res = await axios.get<never, { data: { accessToken: string; refreshToken: string } }>(
-      `${BASE_URL}/user/refresh`,
+      `${BASE_URL}/user/admin/refresh`,
       { params: { refreshToken } }
     );
     const { accessToken, refreshToken: newRefreshToken } = res.data;
