@@ -9,6 +9,7 @@ import UserList from "./pages/UserList";
 import { RouteErrorFallback } from "./components/ErrorBoundary";
 import MeetingRoom from "./pages/MeetingRoom";
 import BookingList from "./pages/BookingList";
+import Statistic from "./pages/Statistic";
 
 const routes: RouteObject[] = [
   {
@@ -35,6 +36,10 @@ const routes: RouteObject[] = [
       {
         path: "/booking-list",
         element: <BookingList />,
+      },
+      {
+        path: "/statistic",
+        element: <Statistic />,
       },
       {
         path: "*",

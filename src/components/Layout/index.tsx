@@ -6,15 +6,10 @@ import type { MenuProps } from "antd";
 const { Header, Content, Sider } = Layout;
 
 const sideMenuItems: MenuProps["items"] = [
-  // {
-  //   key: "meeting-room",
-  //   label: "会议室管理",
-  //   children: [],
-  // },
   { key: "/meeting-room", label: "会议室管理" },
   { key: "/booking-list", label: "预订管理" },
   { key: "/user-list", label: "用户管理" },
-  // { key: "/statistics", label: "统计" },
+  { key: "/statistic", label: "统计" },
 ];
 
 function AppLayout() {
