@@ -57,7 +57,7 @@ function MeetingRoomModal({ open, editing, onSuccess, onCancel }: Props) {
       confirmLoading={loading}
       okText={editing ? "保存" : "创建"}
       cancelText="取消"
-      destroyOnClose
+      destroyOnHidden
     >
       <Form form={form} layout="vertical" style={{ marginTop: 16 }}>
         <Form.Item

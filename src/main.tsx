@@ -1,11 +1,15 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import dayjs from "dayjs";
+import "dayjs/locale/zh-cn";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes.tsx";
 import { App, ConfigProvider } from "antd";
 import AntdInit from "./components/AntdInit/index.tsx";
 import ErrorBoundary from "./components/ErrorBoundary/index.tsx";
 import zhCN from "antd/locale/zh_CN";
+
+dayjs.locale("zh-cn");
 
 const router = createBrowserRouter(routes);
 

@@ -12,7 +12,7 @@ const sideMenuItems: MenuProps["items"] = [
   //   children: [],
   // },
   { key: "/meeting-room", label: "会议室管理" },
-  // { key: "/booking-list", label: "预订管理" },
+  { key: "/booking-list", label: "预订管理" },
   { key: "/user-list", label: "用户管理" },
   // { key: "/statistics", label: "统计" },
 ];
