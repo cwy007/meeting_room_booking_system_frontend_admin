@@ -1,7 +1,7 @@
 import axios from "axios";
 import globalMessage from "./globalMessage";
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "/api";
 
 /** 全局 axios 实例，所有业务请求均通过此实例发出 */
 const request = axios.create({

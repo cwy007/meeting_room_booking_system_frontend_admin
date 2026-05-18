@@ -34,7 +34,3 @@ export interface CreateMeetingRoomDto {
 export interface UpdateMeetingRoomDto extends Partial<CreateMeetingRoomDto> {
   id: number;
 }
-name ?: string;
-capacity ?: number;
-equipment ?: string;
-}
